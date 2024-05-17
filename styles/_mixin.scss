@@ -1,0 +1,19 @@
+@mixin font($font, $style, $weight, $size, $height, $spacing, $color) {
+    font-family: $font;
+    font-style: $style;
+    font-weight: $weight;
+    font-size: $size;
+    line-height: $height;
+    letter-spacing: $spacing;
+    color: $color;
+}
+
+@mixin button($padding) {
+    border: 2px solid #21966c;
+    background-color: #b7ff00;
+    text-transform: uppercase;
+    padding: $padding;
+    border-radius: 10px;
+    cursor: pointer;
+    @include font("Core Sans D 45 Medium", normal, 400, 20px, 19px, 0, #000000);
+}

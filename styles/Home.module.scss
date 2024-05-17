@@ -1,0 +1,139 @@
+@import "_mixin";
+
+.registration {
+  &__wrap {
+    max-width: 1320px;
+    width: 100%;
+    min-height: 980px;
+    margin: 0 auto;
+    padding: 100px 20px 50px;
+  }
+
+  &__title {
+    @include font("Core Sans D 55 Bold", normal, 400, 56px, 90px, 0, #000000);
+    position: relative;
+    z-index: 2;
+    text-wrap: balance;
+    text-align: center;
+  }
+
+  &__title::before {
+    content: "";
+    position: absolute;
+    background: #ffcc00;
+    width: 700px;
+    height: 35px;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    transform: rotate(-2deg);
+  }
+
+  &__subtitle {
+    @include font("Core Sans D 55 Bold", normal, 400, 26px, 40px, 0, rgb(0, 0, 0));
+    margin: 20px auto 0;
+    text-align: center;
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 50px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-width: fit-content;
+
+    a {
+      display: inline-block;
+      text-align: center;
+      padding: 20px 10px;
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid #ff0000;
+      color: rgb(0, 115, 255);
+      font-size: 18px;
+    }
+
+    img {
+      object-fit: contain;
+      width: 100%;
+      max-width: 140px;
+      object-fit: contain;
+    }
+  }
+
+  &__caption {
+    @include font("Core Sans D 45 Medium", normal, 400, 20px, 25px, 0, rgb(0, 0, 0));
+  }
+}
+
+@media all and (max-width: 1025px) {
+  .registration {
+    &__title {
+      font-size: 40px;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    &__title::before {
+      width: 500px;
+    }
+
+    &__subtitle {
+      text-align: center;
+      font-size: 20px;
+      line-height: 1;
+    }
+  }
+}
+
+@media all and (max-width: 768px) {
+  .registration {
+    &__wrap {
+      padding-top: 50px;
+    }
+
+    &__title {
+      font-size: 30px;
+      text-align: center;
+      line-height: 1;
+      margin: 20px 0;
+    }
+
+    &__title::before {
+      max-width: 380px;
+      width: 100%;
+    }
+
+    &__subtitle {
+      text-align: center;
+      font-size: 20px;
+      line-height: 1;
+      margin: 0;
+    }
+
+    &__item {
+      max-width: 100%;
+      align-items: center;
+
+      img {
+        object-fit: contain;
+        width: 100%;
+        max-width: 140px;
+      }
+    }
+
+    &__caption {
+      margin-right: auto;
+      font-size: 18px;
+    }
+  }
+}
